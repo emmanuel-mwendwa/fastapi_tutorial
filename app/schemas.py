@@ -25,9 +25,9 @@ class CreateUser(BaseModel):
     password: str
 
 class User(BaseModel):
-    id: int
     email: EmailStr
     created_at: datetime
+    id: int
 
     class Config:
         from_attributes = True
