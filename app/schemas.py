@@ -40,8 +40,6 @@ class CreateUser(BaseModel):
     password: str
 
 
-
-
 class UserLogin(CreateUser):
     pass
 
