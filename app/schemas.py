@@ -28,11 +28,20 @@ class User(BaseModel):
 
 class Post(PostBase):
     id: int
+    created_at: datetime
     user_id: int
     # returns the pydantic model user 
     user: User
-    created_at: datetime
+    
     # convert sqlalchemy model to pydantic model
+    class Config:
+        from_attributes = True
+
+
+class PostOut(BaseModel):
+    Post: Post
+    votes: int
+
     class Config:
         from_attributes = True
 
